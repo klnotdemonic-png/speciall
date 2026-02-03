@@ -1,27 +1,25 @@
 const pesan = [
-  "Aku sayang kamu, serius 🤍",
-  "Bersamamu itu tenang 😌",
-  "Terima kasih sudah hadir di hidupku 💕",
-  "Kalau capek, pulang ke aku ya 🏡",
-  "Aku mau sama kamu, lama 🤍"
+  "You’re simple, yet the way you change my day feels special.",
+  "Mengenalmu itu seperti membaca puisi pelan-pelan,",
+  "makin dibaca makin terasa.",
+  "Kamutu kayak lagu favorit deh, sekali dengar pengennya diulang terus wkwk"
 ];
 
 let index = 0;
-let laguDiputar = false;
+let mulai = false;
 
-function playLove() {
+function nextLove() {
   const teks = document.getElementById("text");
   const lagu = document.getElementById("lagu");
 
-  if (!laguDiputar) {
+  if (!mulai) {
+    lagu.volume = 0.6;
     lagu.play();
-    laguDiputar = true;
+    mulai = true;
   }
 
   teks.innerText = pesan[index];
   index++;
 
-  if (index >= pesan.length) {
-    index = 0;
-  }
+  if (index >= pesan.length) index = 0;
 }
